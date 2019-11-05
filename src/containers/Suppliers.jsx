@@ -181,7 +181,7 @@ const Suppliers = props => {
 
     return (
         <React.Fragment>
-            <Navbar showOptions />
+            <Navbar showOptions suppliers />
             <MDBContainer>
                 <MDBRow center>
                     <h1 className="text-center w-100 mt-3">Proveedores</h1>

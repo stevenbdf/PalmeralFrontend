@@ -144,7 +144,7 @@ const Users = props => {
 
     return (
         <React.Fragment>
-            <Navbar showOptions />
+            <Navbar showOptions users/>
             <MDBContainer>
                 <MDBRow center>
                     <h1 className="text-center w-100 mt-3">Usuarios</h1>
