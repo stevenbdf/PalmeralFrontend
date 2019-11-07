@@ -6,6 +6,7 @@ import Dashboard from './containers/Dashboard'
 import Users from './containers/Users'
 import Suppliers from './containers/Suppliers'
 import Categories from './containers/Categories'
+import Products from './containers/Products'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <ProtectedRoute exact path="/users" component={Users} />
           <ProtectedRoute exact path="/suppliers" component={Suppliers} />
           <ProtectedRoute exact path="/categories" component={Categories} />
+          <ProtectedRoute exact path="/products" component={Products} />
         </Switch>
       </div>
     </Router>

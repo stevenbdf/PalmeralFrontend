@@ -44,7 +44,7 @@ const NavbarPage = props => {
                         <MDBNavbarToggler onClick={toggleCollapse} />
                         <MDBCollapse isOpen={isOpen} navbar>
                             <MDBNavbarNav left>
-                                <MDBNavItem active={props.products}>
+                                <MDBNavItem active={props.invetory}>
                                     <MDBNavLink to="/inventory">Inventario</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem active={props.products}>
