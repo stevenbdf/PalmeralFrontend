@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ProtectedRoute } from './utils/protectedRoute'
 import Login from './containers/Login'
+import Password from './containers/Password'
 import Dashboard from './containers/Dashboard'
 import Users from './containers/Users'
 import Suppliers from './containers/Suppliers'
@@ -15,6 +16,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={Login} />
+          <Route exact path="/password" component={Password} />
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/users" component={Users} />
           <ProtectedRoute exact path="/suppliers" component={Suppliers} />

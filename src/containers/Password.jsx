@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
 import { MDBContainer, MDBRow, MDBCol, MDBIcon, MDBInput, MDBBtn } from 'mdbreact'
-import { login as LoginRequest } from '../controllers/login'
+import { resetPassword } from '../controllers/login'
 import auth from '../utils/auth'
 
-const Login = props => {
+const Password = props => {
 
-    const [form, setValues] = useState({ email: '', password: '' })
+    const [form, setValues] = useState({ email: '' })
 
     const handleChange = e => {
         setValues({
@@ -18,12 +18,10 @@ const Login = props => {
 
     const handleSubmit = async e => {
         e.preventDefault()
-        const res = await LoginRequest(form)
+        const res = await resetPassword(form)
         if (res.status) {
-            localStorage.setItem('token', res.token)
-            localStorage.setItem('id_user', res.id_user)
-            swal(res.message, 'Presiona para continuar', 'success')
-                .then(value => props.history.push('/dashboard'))
+            swal('Correcto', res.message, 'success')
+                .then(value => props.history.push('/'))
         } else {
             swal('Error', res.message, 'error')
         }
@@ -44,7 +42,7 @@ const Login = props => {
                     <div className="d-flex justify-content-center">
                         <MDBIcon className="d-block" icon="warehouse" size="8x" />
                     </div>
-                    <h1 className="text-center mt-3">Inventario Palmeral</h1>
+                    <h1 className="text-center mt-3">Inventario Palmeral - Recuperar Contraseña</h1>
                     <form className="form-group" onSubmit={handleSubmit}>
                         <MDBInput
                             label="Correo"
@@ -55,19 +53,11 @@ const Login = props => {
                             value={form.email}
                             onChange={handleChange}
                         />
-                        <MDBInput
-                            label="Contraseña"
-                            icon="lock"
-                            type="password"
-                            name="password"
-                            value={form.password}
-                            onChange={handleChange}
-                        />
-                        <div className="d-flex justify-content-center mb-3">
-                            <MDBBtn type="submit" color="elegant">Ingresar</MDBBtn>
+                        <div className="d-flex justify-content-center mb-4">
+                            <MDBBtn type="submit" color="elegant">Enviar</MDBBtn>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <Link to="/password">¿Olvidaste tu contraseña?</Link>
+                            <Link to="/">Volver a login</Link>
                         </div>
                     </form>
                 </MDBCol>
@@ -76,4 +66,4 @@ const Login = props => {
     )
 }
 
-export default Login
+export default Password
