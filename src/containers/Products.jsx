@@ -12,7 +12,7 @@ import { get, create, update, find, deleteProduct } from '../controllers/product
 import { get as getSuppliers } from '../controllers/suppliers'
 import { get as getCategories } from '../controllers/categories'
 
-const IMAGE_URL = 'http://34.70.125.18/PalmeralBackend/images/'
+const IMAGE_URL = 'https://melodic-park-237401.appspot.com/'
 
 const Products = props => {
     document.title = 'Palmeral - Productos'
