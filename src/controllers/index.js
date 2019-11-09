@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://melodic-park-237401.appspot.com/',
+    baseURL: 'https://tiendashidori.xyz/PalmeralBackend/',
     headers: {
         "Content-Type": "application/json"
     }
