@@ -12,7 +12,7 @@ import { get, create, update, find, deleteProduct } from '../controllers/product
 import { get as getSuppliers } from '../controllers/suppliers'
 import { get as getCategories } from '../controllers/categories'
 
-const IMAGE_URL = 'https://tiendashidori.xyz/PalmeralBackend/images/'
+const IMAGE_URL = 'http://localhost/palmeral/palmeral_backend/images/'
 
 const Products = props => {
     document.title = 'Palmeral - Productos'
